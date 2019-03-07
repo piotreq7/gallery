@@ -11,8 +11,6 @@
 
 <?php 
 
-
-
 $users = User::find_all_users();
 foreach ($users as $user) {
     

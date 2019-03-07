@@ -3,24 +3,19 @@
 
         <div class="row">
 
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
 
-    
-            
-          
-         
-
-            </div>
+        </div>
 
 
 
 
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
 
             
-                 <?php include("includes/sidebar.php"); ?>
+         <?php include("includes/sidebar.php"); ?>
 
 
 

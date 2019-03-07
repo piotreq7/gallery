@@ -24,18 +24,6 @@ $the_result_array= self::find_this_query("SELECT * FROM users WHERE id=$user_id 
 
 return !empty($the_result_array) ? array_shift($the_result_array) : false;
 
-
-// if(!empty($the_result_array)){
-
-// 	$first_item=array_shift($the_result_array);
-// 	return $first_item;
-// }else{
-
-// return false;
-
-// }
-
-
 }
 
 
@@ -49,15 +37,26 @@ while ($row = mysqli_fetch_array($result_set)) {
 $the_object_array[]= self::instantation($row);
 }
 
-
-
 return $the_object_array;
+}
 
 
+public static function verify_user($username,$password){
+global $database;
+$username = $database->escape_string($username);
+$password = $database->escape_string($password);
+$sql= "SELECT * FROM users WHERE ";
+$sql .="username = '{$username}' ";
+$sql .="AND password = '{$password}' ";
+$sql .="LIMIT 1 ";
 
+$the_result_array= self::find_this_query($sql);
 
+return !empty($the_result_array) ? array_shift($the_result_array) : false;
 
 }
+
+
 
 
 public static function instantation($the_record){  //inicjalizuje obiekt i przypisuje wartości 
@@ -97,18 +96,7 @@ $object_properties = get_object_vars($this); //tablica ze zmiennymi obiektu
 
 return array_key_exists($the_atribute, $object_properties); //sprawdza czy atrybut jest w tablicy object properties, zwraca true or false 
 
-
 }
-
-
-
-
-
-
-
-
-
-
 
 }
  ?>
