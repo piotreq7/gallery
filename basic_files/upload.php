@@ -1,12 +1,19 @@
 <?php 
+
+if(isset($_POST['submit'])){
 echo "<pre>";
 
 print_r($_FILES['file_upload']);
 
 echo "</pre>";
 
- ?>
+ 
 
+
+	
+}
+
+?>
 
  <!DOCTYPE html>
  <html lang="en">
