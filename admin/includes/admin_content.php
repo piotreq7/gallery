@@ -11,16 +11,16 @@
 
 <?php 
 
-$users = User::find_all_users();
-foreach ($users as $user) {
+// $users = User::find_all_users();
+// foreach ($users as $user) {
     
-echo $user->password . "<br>";
-}
+// echo $user->password . "<br>";
+// }
 
 
-$found_user = User::find_user_by_id(2);
+// $found_user = User::find_user_by_id(2);
 
-echo $found_user->id;
+// echo $found_user->id;
 
 
 

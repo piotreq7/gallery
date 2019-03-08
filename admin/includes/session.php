@@ -5,6 +5,7 @@ class Session {
 
 	private $signed_in= false;
 	public $user_id;
+	public $message; 
 
 
 
@@ -13,6 +14,7 @@ class Session {
 function __construct(){
 session_start();
 $this->check_the_login();
+$this->check_message();
 
 }
 
@@ -27,7 +29,7 @@ public function is_signed_in(){
 public function login($user){
 
 	if($user){
-	$this->user_id=$_SESSION['user']= $user->id;
+	$this->user_id=$_SESSION['user_id']= $user->id;
 	$this->signed_in = true;
 	}
 
@@ -36,9 +38,9 @@ public function login($user){
 
 
 
-public function logout($user){
+public function logout(){
 
-unset($_SESSION['user']);
+unset($_SESSION['user_id']);
 unset($this->user_id);
 $this->signed_in = false;
 
@@ -49,7 +51,7 @@ $this->signed_in = false;
 
 
 
-private function check_the_login(){
+private function check_the_login(){ //sprawdza  czy użytkownik jest zalogowany
 
 	if(isset($_SESSION['user_id'])){
 
@@ -71,8 +73,54 @@ private function check_the_login(){
 
 
 
+public function message($msg=""){
+
+if(!empty($msg)){
+$_SESSION['message']=$msg;
+
+}else{
+return $this->message;
+}
+}
+
+
+
+
+
+private function check_message(){
+
+if(isset($_SESSION['message'])){
+
+	$this->message=$_SESSION['message'];
+}else{
+	$this->message="";
+}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
 
 $session= new Session();
 

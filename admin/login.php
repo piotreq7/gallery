@@ -1,20 +1,21 @@
 <?php require_once ("includes/header.php"); ?>
 <?php 
+
 if($session->is_signed_in()){redirect("index.php");}
 
-if(isset($post['submit'])){
+if(isset($_POST['submit'])){
 
-$username = trim($post["username"]);
-$password = trim($post["password"]);
+$username = trim($_POST["username"]);
+$password = trim($_POST["password"]);
 
 //method t ocheck database
 $user_found = User::verify_user($username,$password);
 
 
-
 if($user_found){
-
+	
 	$session->login($user_found);
+
 	redirect("index.php");
 }else{
 $the_message = "Nieprawidłowe hasło";
@@ -26,6 +27,7 @@ $the_message = "Nieprawidłowe hasło";
 
 $username="";
 $password="";
+$the_message ="";
 }
 
  ?>
@@ -33,7 +35,7 @@ $password="";
 
 <div class="col-md-4 col-md-offset-3">
 
-<!-- <h4 class="bg-danger">ccc</h4> -->
+<h4 class="bg-danger"><?php echo $the_message; ?></h4>
 	
 <form id="login-id" action="" method="post">
 	
