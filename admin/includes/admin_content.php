@@ -9,16 +9,59 @@
                         </h1>
 
 
+
+
+
+
+
+
+
+
+
+
+
 <?php 
 
-// $users = User::find_all_users();
-// foreach ($users as $user) {
+
+// $user = new User();
+// $user->username  = "Example_username";
+// $user->password  = "Example_password";
+// $user->firstname  = "Joe";
+// $user->lastname = "Babaa";
+
+// $user->create();
+
+// $user =User::find_by_id(20);
+// // $user->lastname = "aaaaaa";
+// // // $user->save();
+// $user->lastname = "Babaasssssss";
+// $user->update();
+
+// $user->delete();
+
+
+// $photo = new Photo();
+// $photo->title  = "Example_photo";
+// $photo->size  = 20;
+
+
+// $photo->create();
+
+
+// echo SITE_ROOT;
+// echo INCLUDES_PATH;
+
+
+
+
+// $photos = Photo::find_all();
+// foreach ($photos as $photo) {
     
-// echo $user->password . "<br>";
+// echo $photo->description . "<br>";
 // }
 
 
-// $found_user = User::find_user_by_id(2);
+// $found_user = User::find_by_id(2);
 
 // echo $found_user->id;
 
@@ -41,3 +84,6 @@
                 <!-- /.row -->
 
             </div>
+
+
+            

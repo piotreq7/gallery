@@ -11,8 +11,10 @@
                     </li>
                     <li>
                         <a href="comments.php"><i class="fa fa-fw fa-edit"></i> Comments</a>
+
                     </li>
                     <li>
+                        <a  a href="photos.php"><i class="fa fa-fw fa-edit"></i> Photos</a>
                        
                 </ul>
             </div>
